@@ -6,34 +6,31 @@ import struct
 import socket
 import time
 
-from twisted.internet import protocol
+from twisted.internet.protocol import Protocol, ServerFactory
+from twisted.internet.task import LoopingCall
 from twisted.python import log
 from twisted.application import service, internet
 from twisted.python.log import ILogObserver, FileLogObserver
 from twisted.python.logfile import DailyLogFile
 
-serverLists = {}
-
 def read_struct(fmt, data):
    return struct.unpack_from(fmt, data), data[struct.calcsize(fmt):]
 
-
-class MW3Master(protocol.Protocol):
+class MW3Master(Protocol):
    MW3_MS_SERVER_MAGIC4CC = 0x424f4f42
    MW3_MS_CLIENT_MAGIC4CC = 0x434f4b45
-   MW3_MS_CLEANUP_RATE = 30      #seconds
 
    def dataReceived(self, data):
       (magic, version), data = read_struct("II", data)
-      vList = serverLists.setdefault(version, {})
+      vList = self.factory.serverLists.setdefault(version, {})
 
-      # XXX cleanup every time for now XXX
-      vListCopy = vList.copy()
-      for ((ip, port), last) in vListCopy.iteritems():
-         diff = time.time() - last
-         if diff >= self.MW3_MS_CLEANUP_RATE:
-            del vList[(ip, port)]
-            log.msg('%s:%s expired (active servers left: %d)' % (ip, port, len(vListCopy)))
+      # ignore old clients
+      if version == 17039742:
+         self.transport.loseConnection()
+         return
+
+      # TODO Use Deferreds if anything in here takes a substantial amount of processing time,
+      # else we will push up the server's response time.
 
       if magic == self.MW3_MS_SERVER_MAGIC4CC:
          (port, ), data = read_struct("H", data)
@@ -52,12 +49,27 @@ class MW3Master(protocol.Protocol):
 
 MW3_MS_LISTEN_PORT = 27017
 
-print("TeknoMW3 Master Server v1.0e")
-factory = protocol.ServerFactory()
-factory.protocol = MW3Master
+class MW3MasterFactory(ServerFactory):
+   protocol = MW3Master
+   lastPrune = 0
+
+   def pruneList(self):
+      now = time.time()
+      for serverList in self.serverLists.values():
+         for ((ip, port), last) in serverList.items():
+            if last < self.lastPrune:
+               del serverList[(ip, port)]
+               log.msg('%s:%s expired (active servers left: %d)' % (ip, port, len(serverList)))
+      self.lastPrune = now
+
+   def startFactory(self):
+      self.serverLists = {}
+      LoopingCall(self.pruneList).start(30)
+
+print("TeknoMW3 Master Server v1.0f")
 
 application = service.Application('MW3 Master')
 #application.setComponent(ILogObserver, FileLogObserver(DailyLogFile(os.path.join(os.path.dirname(__file__), 'mw3master.log'))).emit)
 
-service = internet.TCPServer(MW3_MS_LISTEN_PORT, factory)
+service = internet.TCPServer(MW3_MS_LISTEN_PORT, MW3MasterFactory())
 service.setServiceParent(application)
