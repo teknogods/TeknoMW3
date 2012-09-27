@@ -1,0 +1,3 @@
+#include "CGameID.h"
+
+};

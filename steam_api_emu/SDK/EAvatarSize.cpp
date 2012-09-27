@@ -1,0 +1,3 @@
+#include "EAvatarSize.h"
+
+};

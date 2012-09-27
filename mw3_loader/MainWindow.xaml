@@ -1,0 +1,118 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="TeknoMW3.MainWindow"
+	x:Name="Window"
+	Title="TeknoGods Modern Warfare 3 Offline/LAN gameplay MOD 2.5"
+	Width="500" Height="680" ResizeMode="NoResize" Icon="/TeknoMW3;component/elephant.ico" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing">
+
+	<Window.Resources>
+		<ControlTemplate x:Key="GlassButton" TargetType="{x:Type Button}">
+			<ControlTemplate.Resources>
+				<Storyboard x:Key="Timeline1">
+					<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+						<SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+					</DoubleAnimationUsingKeyFrames>
+				</Storyboard>
+				<Storyboard x:Key="Timeline2">
+					<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+						<SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+					</DoubleAnimationUsingKeyFrames>
+				</Storyboard>
+			</ControlTemplate.Resources>
+			<Border BorderBrush="#FFFFFFFF" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4">
+				<Border x:Name="border" Background="#7F000000" BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="0.507*"/>
+							<RowDefinition Height="0.493*"/>
+						</Grid.RowDefinitions>
+						<Border Opacity="0" HorizontalAlignment="Stretch" x:Name="glow" Width="Auto" Grid.RowSpan="2" CornerRadius="4,4,4,4">
+							<Border.Background>
+								<RadialGradientBrush>
+									<RadialGradientBrush.RelativeTransform>
+										<TransformGroup>
+											<ScaleTransform ScaleX="1.702" ScaleY="2.243"/>
+											<SkewTransform AngleX="0" AngleY="0"/>
+											<RotateTransform Angle="0"/>
+											<TranslateTransform X="-0.368" Y="-0.152"/>
+										</TransformGroup>
+									</RadialGradientBrush.RelativeTransform>
+									<GradientStop Color="#B28DBDFF" Offset="0"/>
+									<GradientStop Color="#008DBDFF" Offset="1"/>
+								</RadialGradientBrush>
+							</Border.Background>
+						</Border>
+						<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Grid.RowSpan="2"/>
+						<Border HorizontalAlignment="Stretch" Margin="0,0,0,0" x:Name="shine" Width="Auto" CornerRadius="4,4,0,0">
+							<Border.Background>
+								<LinearGradientBrush EndPoint="0.494,0.889" StartPoint="0.494,0.028">
+									<GradientStop Color="#99FFFFFF" Offset="0"/>
+									<GradientStop Color="#33FFFFFF" Offset="1"/>
+								</LinearGradientBrush>
+							</Border.Background>
+						</Border>
+					</Grid>
+				</Border>
+			</Border>
+			<ControlTemplate.Triggers>
+				<Trigger Property="IsPressed" Value="True">
+					<Setter Property="Opacity" TargetName="shine" Value="0.4"/>
+					<Setter Property="Background" TargetName="border" Value="#CC000000"/>
+					<Setter Property="Visibility" TargetName="glow" Value="Hidden"/>
+				</Trigger>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Trigger.EnterActions>
+						<BeginStoryboard Storyboard="{StaticResource Timeline1}"/>
+					</Trigger.EnterActions>
+					<Trigger.ExitActions>
+						<BeginStoryboard x:Name="Timeline2_BeginStoryboard" Storyboard="{StaticResource Timeline2}"/>
+					</Trigger.ExitActions>
+				</Trigger>
+			</ControlTemplate.Triggers>
+		</ControlTemplate>
+	</Window.Resources>
+
+	<Grid x:Name="LayoutRoot">
+		<Grid Margin="0,0,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="500" />
+				<RowDefinition Height="28" />
+				<RowDefinition Height="28" />
+				<RowDefinition Height="28" />
+                <RowDefinition Height="28" />
+                <RowDefinition Height="28" />                
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                
+			</Grid.ColumnDefinitions>
+			<Image Source="/TeknoMW3;component/Images/done_logo_mw3.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+			<Label Content="IP Address and Port(MP only)" Style="{DynamicResource SimpleLabel}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<TextBox Name="IpBox" Style="{DynamicResource SimpleTextBox}" Text="" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" LostFocus="IpLostFocus"/>
+            <TextBox Name="PortBox" Style="{DynamicResource SimpleTextBox}" Text="" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" LostFocus="PortLostFocus"/>
+            
+            <Image Width="100" Source="/TeknoMW3;component/donate.gif" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Image_MouseDown"/>
+            
+            <Button Content="Settings" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Width="130" Grid.Row="4" Grid.Column="1" Click="Button_Click"/>
+            <Button Content="IWNet Profile Dumper" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Width="130" Grid.Row="2" Grid.Column="0" Click="BtnPdClick" />
+            <Button Content="Singleplayer" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="2" Grid.Column="1" Width="130" Click="BtcSpClick" />
+            <Button Content="About" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="3" Grid.Column="0" Width="130" Click="BtnAboutClick" />
+            <Button Content="Multiplayer" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="3" Grid.Column="1" Width="130" Click="BtnMpClick" />
+            <Button Name="btnMPDC" Content="Start (Direct Connect)" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="4" Grid.Column="2" Width="130" Visibility="Hidden" Click="BtnMpdcClick" />
+            <Button Name="btnMPLAN" Content="Start (LAN/Online)" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="3" Grid.Column="2" Width="130" Visibility="Hidden" Click="BtnMpLanClick" />
+            <Button Name="btcMPDedi" Content="Start Dedicated Server" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="2" Grid.Column="2" Width="130" Visibility="Hidden" Click="BtnMpDediClick" />
+            <Button Name="btcSPC" Content="Start as client" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="3" Grid.Column="2" Width="130" Visibility="Hidden" Click="BtnSpcClick" />
+            <Button Name="btnSPH" Content="Start as host" Template="{DynamicResource GlassButton}"  Foreground="#FFFFFFFF" Grid.Row="2" Grid.Column="2" Width="130" Visibility="Hidden" Click="BtnSphClick" />
+            <TextBlock Grid.Row="5" Grid.ColumnSpan="3" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <Hyperlink NavigateUri="http://teknogods.com" Name="NewsUrl" Click="NewsUrl_Click">
+                <TextBlock Name="NewsText"/>
+            </Hyperlink>
+            </TextBlock>
+            <CheckBox Content="Debug" Grid.Column="2" Height="16" HorizontalAlignment="Left" Margin="107,484,0,0" Name="checkBox1" VerticalAlignment="Top" Checked="checkBox1_Checked" Visibility="Hidden" />
+        </Grid>		
+	</Grid>
+</Window>

@@ -1,0 +1,3 @@
+#include "EPurchaseResultDetail.h"
+
+};

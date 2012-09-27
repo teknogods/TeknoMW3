@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1CC0D7AA-2DEF-43EE-A8B9-0C33D281E4A6}</ProjectGuid>
+    <RootNamespace>steam_api_emu</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TeknoMW3</TargetName>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</EmbedManifest>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">steam_api</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;STEAM_API_EMU_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;STEAM_API_EMU_EXPORTS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateMapFile>true</GenerateMapFile>
+    </Link>
+    <CustomBuildStep />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dw_online_files.cpp" />
+    <ClCompile Include="dw_stun_server.cpp" />
+    <ClCompile Include="game_admin_base.cpp" />
+    <ClCompile Include="game_dvar_base.cpp" />
+    <ClCompile Include="game_hotkey_base.cpp" />
+    <ClCompile Include="game_patch_base_coop.cpp" />
+    <ClCompile Include="game_patch_hookports.cpp" />
+    <ClCompile Include="steam_api_emu_exports.cpp" />
+    <ClCompile Include="steam_api_emu_interfaces.cpp" />
+    <ClCompile Include="util_adv_log.cpp" />
+    <ClCompile Include="game_patch_base.cpp" />
+    <ClCompile Include="util_codehook.cpp" />
+    <ClCompile Include="game_server_items.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="steam_api_emu.cpp" />
+    <ClCompile Include="steam_api_emu_misc.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="util_ini.cpp" />
+    <ClCompile Include="util_smbios2.cpp" />
+    <ClCompile Include="util_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dw_online_files.h" />
+    <ClInclude Include="dw_stun_server.h" />
+    <ClInclude Include="game_admin_base.h" />
+    <ClInclude Include="game_dvar_base.h" />
+    <ClInclude Include="game_hotkey_base.h" />
+    <ClInclude Include="game_patch_base_coop.h" />
+    <ClInclude Include="game_patch_hookports.h" />
+    <ClInclude Include="util_adv_log.h" />
+    <ClInclude Include="game_patch_base.h" />
+    <ClInclude Include="SDK\AppTicketCommon.h" />
+    <ClInclude Include="SDK\CSteamAPIContext.h" />
+    <ClInclude Include="SDK\EChatMemberStateChange.h" />
+    <ClInclude Include="SDK\EPersonalQuestion.h" />
+    <ClInclude Include="SDK\ESteamAppUpdateStatsQueryType.h" />
+    <ClInclude Include="SDK\ESteamNotify.h" />
+    <ClInclude Include="SDK\ESteamServerType.h" />
+    <ClInclude Include="SDK\ESteamSubscriptionStatus.h" />
+    <ClInclude Include="SDK\GameServerStatsCommon.h" />
+    <ClInclude Include="SDK\GameStatsCommon.h" />
+    <ClInclude Include="SDK\HTTPCommon.h" />
+    <ClInclude Include="SDK\IClientAudio.h" />
+    <ClInclude Include="SDK\IClientBilling.h" />
+    <ClInclude Include="SDK\IClientConfigStore.h" />
+    <ClInclude Include="SDK\IClientGameServerStats.h" />
+    <ClInclude Include="SDK\IClientGameStats.h" />
+    <ClInclude Include="SDK\IClientHTTP.h" />
+    <ClInclude Include="SDK\IClientMasterServerUpdater.h" />
+    <ClInclude Include="SDK\IClientMatchmakingServers.h" />
+    <ClInclude Include="SDK\IClientNetworking.h" />
+    <ClInclude Include="SDK\IClientRemoteStorage.h" />
+    <ClInclude Include="SDK\IClientScreenshots.h" />
+    <ClInclude Include="SDK\IClientUserStats.h" />
+    <ClInclude Include="SDK\Interface_OSW.h" />
+    <ClInclude Include="SDK\ISteamApps004.h" />
+    <ClInclude Include="SDK\ISteamAppTicket001.h" />
+    <ClInclude Include="SDK\ISteamClient009.h" />
+    <ClInclude Include="SDK\ISteamClient010.h" />
+    <ClInclude Include="SDK\ISteamClient011.h" />
+    <ClInclude Include="SDK\ISteamClient012.h" />
+    <ClInclude Include="SDK\ISteamFriends006.h" />
+    <ClInclude Include="SDK\ISteamFriends007.h" />
+    <ClInclude Include="SDK\ISteamFriends008.h" />
+    <ClInclude Include="SDK\ISteamFriends009.h" />
+    <ClInclude Include="SDK\ISteamFriends010.h" />
+    <ClInclude Include="SDK\ISteamFriends011.h" />
+    <ClInclude Include="SDK\ISteamGameServer010.h" />
+    <ClInclude Include="SDK\ISteamGameServer011.h" />
+    <ClInclude Include="SDK\ISteamGameServerStats001.h" />
+    <ClInclude Include="SDK\ISteamGameStats001.h" />
+    <ClInclude Include="SDK\ISteamHTTP001.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking008.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking009.h" />
+    <ClInclude Include="SDK\ISteamNetworking004.h" />
+    <ClInclude Include="SDK\ISteamNetworking005.h" />
+    <ClInclude Include="SDK\ISteamRemoteStorage003.h" />
+    <ClInclude Include="SDK\ISteamRemoteStorage004.h" />
+    <ClInclude Include="SDK\ISteamRemoteStorage005.h" />
+    <ClInclude Include="SDK\ISteamScreenshots001.h" />
+    <ClInclude Include="SDK\ISteamUser013.h" />
+    <ClInclude Include="SDK\ISteamUser014.h" />
+    <ClInclude Include="SDK\ISteamUser015.h" />
+    <ClInclude Include="SDK\ISteamUser016.h" />
+    <ClInclude Include="SDK\ISteamUserItems004.h" />
+    <ClInclude Include="SDK\ISteamUserStats007.h" />
+    <ClInclude Include="SDK\ISteamUserStats008.h" />
+    <ClInclude Include="SDK\ISteamUserStats009.h" />
+    <ClInclude Include="SDK\ISteamUserStats010.h" />
+    <ClInclude Include="SDK\ISteamUtils005.h" />
+    <ClInclude Include="SDK\POSIXLibrary.h" />
+    <ClInclude Include="SDK\ScreenshotsCommon.h" />
+    <ClInclude Include="SDK\string_t.h" />
+    <ClInclude Include="SDK\TSteamDiscountQualifier.h" />
+    <ClInclude Include="SDK\TSteamOfflineStatus.h" />
+    <ClInclude Include="SDK\TSteamPaymentCardReceiptInfo.h" />
+    <ClInclude Include="SDK\TSteamPrepurchaseReceiptInfo.h" />
+    <ClInclude Include="SDK\TSteamSubscriptionDiscount.h" />
+    <ClInclude Include="SDK\TSteamSubscriptionReceipt.h" />
+    <ClInclude Include="SDK\Win32Library.h" />
+    <ClInclude Include="game_server_items.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SDK\AppsCommon.h" />
+    <ClInclude Include="SDK\BillingCommon.h" />
+    <ClInclude Include="SDK\BridgeCommon.h" />
+    <ClInclude Include="SDK\CCallback.h" />
+    <ClInclude Include="SDK\CGameID.h" />
+    <ClInclude Include="SDK\ClientCommon.h" />
+    <ClInclude Include="SDK\ContentServerCommon.h" />
+    <ClInclude Include="SDK\CSteamID.h" />
+    <ClInclude Include="SDK\EAccountType.h" />
+    <ClInclude Include="SDK\EAppUsageEvent.h" />
+    <ClInclude Include="SDK\EAuthSessionResponse.h" />
+    <ClInclude Include="SDK\EAvatarSize.h" />
+    <ClInclude Include="SDK\EBeginAuthSessionResult.h" />
+    <ClInclude Include="SDK\EChatEntryType.h" />
+    <ClInclude Include="SDK\EChatRoomEnterResponse.h" />
+    <ClInclude Include="SDK\EDenyReason.h" />
+    <ClInclude Include="SDK\EDetailedPlatformErrorType.h" />
+    <ClInclude Include="SDK\EFriendFlags.h" />
+    <ClInclude Include="SDK\EFriendMsgType.h" />
+    <ClInclude Include="SDK\EFriendRelationship.h" />
+    <ClInclude Include="SDK\EItemCriteriaOperator.h" />
+    <ClInclude Include="SDK\EItemQuality.h" />
+    <ClInclude Include="SDK\EItemRequestResult.h" />
+    <ClInclude Include="SDK\ELeaderboardDataRequest.h" />
+    <ClInclude Include="SDK\ELeaderboardDisplayType.h" />
+    <ClInclude Include="SDK\ELeaderboardSortMethod.h" />
+    <ClInclude Include="SDK\ELicenseFlags.h" />
+    <ClInclude Include="SDK\ELobbyComparison.h" />
+    <ClInclude Include="SDK\ELobbyType.h" />
+    <ClInclude Include="SDK\ELogonState.h" />
+    <ClInclude Include="SDK\EMatchMakingServerResponse.h" />
+    <ClInclude Include="SDK\EMatchMakingType.h" />
+    <ClInclude Include="SDK\ENewsUpdateType.h" />
+    <ClInclude Include="SDK\ENotificationPosition.h" />
+    <ClInclude Include="SDK\EnumString.h" />
+    <ClInclude Include="SDK\EPaymentMethod.h" />
+    <ClInclude Include="SDK\EPersonaChange.h" />
+    <ClInclude Include="SDK\EPersonaState.h" />
+    <ClInclude Include="SDK\EPurchaseResultDetail.h" />
+    <ClInclude Include="SDK\ERegistrySubTree.h" />
+    <ClInclude Include="SDK\EResult.h" />
+    <ClInclude Include="SDK\EServerMode.h" />
+    <ClInclude Include="SDK\ESNetSocketConnectionType.h" />
+    <ClInclude Include="SDK\ESNetSocketState.h" />
+    <ClInclude Include="SDK\ESteamAPICallFailure.h" />
+    <ClInclude Include="SDK\ESteamBufferMethod.h" />
+    <ClInclude Include="SDK\ESteamError.h" />
+    <ClInclude Include="SDK\ESteamFindFilter.h" />
+    <ClInclude Include="SDK\ESteamNotificationCallbackEvent.h" />
+    <ClInclude Include="SDK\ESteamPaymentCardType.h" />
+    <ClInclude Include="SDK\ESteamSeekMethod.h" />
+    <ClInclude Include="SDK\ESteamSubscriptionBillingInfoType.h" />
+    <ClInclude Include="SDK\ESteamUserStatType.h" />
+    <ClInclude Include="SDK\ESystemIMType.h" />
+    <ClInclude Include="SDK\EUniverse.h" />
+    <ClInclude Include="SDK\EVACBan.h" />
+    <ClInclude Include="SDK\EVoiceResult.h" />
+    <ClInclude Include="SDK\FriendGameInfo.h" />
+    <ClInclude Include="SDK\FriendsCommon.h" />
+    <ClInclude Include="SDK\GameCoordinatorCommon.h" />
+    <ClInclude Include="SDK\GameServerCommon.h" />
+    <ClInclude Include="SDK\gameserveritem.h" />
+    <ClInclude Include="SDK\GameServerItemsCommon.h" />
+    <ClInclude Include="SDK\IClientAppManager.h" />
+    <ClInclude Include="SDK\IClientApps.h" />
+    <ClInclude Include="SDK\IClientContentServer.h" />
+    <ClInclude Include="SDK\IClientDepotBuilder.h" />
+    <ClInclude Include="SDK\IClientEngine.h" />
+    <ClInclude Include="SDK\IClientFriends.h" />
+    <ClInclude Include="SDK\IClientGameCoordinator.h" />
+    <ClInclude Include="SDK\IClientGameServer.h" />
+    <ClInclude Include="SDK\IClientMatchmaking.h" />
+    <ClInclude Include="SDK\IClientUser.h" />
+    <ClInclude Include="SDK\IClientUtils.h" />
+    <ClInclude Include="SDK\Interface.h" />
+    <ClInclude Include="SDK\IP2PController.h" />
+    <ClInclude Include="SDK\ISteam003.h" />
+    <ClInclude Include="SDK\ISteam004.h" />
+    <ClInclude Include="SDK\ISteam005.h" />
+    <ClInclude Include="SDK\ISteam006.h" />
+    <ClInclude Include="SDK\ISteam2Bridge001.h" />
+    <ClInclude Include="SDK\ISteam2Bridge002.h" />
+    <ClInclude Include="SDK\ISteamApps001.h" />
+    <ClInclude Include="SDK\ISteamApps002.h" />
+    <ClInclude Include="SDK\ISteamApps003.h" />
+    <ClInclude Include="SDK\ISteamBilling001.h" />
+    <ClInclude Include="SDK\ISteamBilling002.h" />
+    <ClInclude Include="SDK\ISteamClient006.h" />
+    <ClInclude Include="SDK\ISteamClient007.h" />
+    <ClInclude Include="SDK\ISteamClient008.h" />
+    <ClInclude Include="SDK\ISteamContentServer001.h" />
+    <ClInclude Include="SDK\ISteamContentServer002.h" />
+    <ClInclude Include="SDK\ISteamFriends001.h" />
+    <ClInclude Include="SDK\ISteamFriends002.h" />
+    <ClInclude Include="SDK\ISteamFriends003.h" />
+    <ClInclude Include="SDK\ISteamFriends004.h" />
+    <ClInclude Include="SDK\ISteamFriends005.h" />
+    <ClInclude Include="SDK\ISteamGameCoordinator001.h" />
+    <ClInclude Include="SDK\ISteamGameServer002.h" />
+    <ClInclude Include="SDK\ISteamGameServer003.h" />
+    <ClInclude Include="SDK\ISteamGameServer004.h" />
+    <ClInclude Include="SDK\ISteamGameServer005.h" />
+    <ClInclude Include="SDK\ISteamGameServer006.h" />
+    <ClInclude Include="SDK\ISteamGameServer007.h" />
+    <ClInclude Include="SDK\ISteamGameServer008.h" />
+    <ClInclude Include="SDK\ISteamGameServer009.h" />
+    <ClInclude Include="SDK\ISteamGameServerItems002.h" />
+    <ClInclude Include="SDK\ISteamGameServerItems003.h" />
+    <ClInclude Include="SDK\ISteamGameServerItems004.h" />
+    <ClInclude Include="SDK\ISteamMasterServerUpdater001.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking001.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking002.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking003.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking004.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking005.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking006.h" />
+    <ClInclude Include="SDK\ISteamMatchmaking007.h" />
+    <ClInclude Include="SDK\ISteamMatchmakingServers001.h" />
+    <ClInclude Include="SDK\ISteamMatchmakingServers002.h" />
+    <ClInclude Include="SDK\ISteamNetworking001.h" />
+    <ClInclude Include="SDK\ISteamNetworking002.h" />
+    <ClInclude Include="SDK\ISteamNetworking003.h" />
+    <ClInclude Include="SDK\ISteamRemoteStorage001.h" />
+    <ClInclude Include="SDK\ISteamRemoteStorage002.h" />
+    <ClInclude Include="SDK\ISteamUser004.h" />
+    <ClInclude Include="SDK\ISteamUser005.h" />
+    <ClInclude Include="SDK\ISteamUser006.h" />
+    <ClInclude Include="SDK\ISteamUser007.h" />
+    <ClInclude Include="SDK\ISteamUser008.h" />
+    <ClInclude Include="SDK\ISteamUser009.h" />
+    <ClInclude Include="SDK\ISteamUser010.h" />
+    <ClInclude Include="SDK\ISteamUser011.h" />
+    <ClInclude Include="SDK\ISteamUser012.h" />
+    <ClInclude Include="SDK\ISteamUserItems001.h" />
+    <ClInclude Include="SDK\ISteamUserItems002.h" />
+    <ClInclude Include="SDK\ISteamUserItems003.h" />
+    <ClInclude Include="SDK\ISteamUserStats001.h" />
+    <ClInclude Include="SDK\ISteamUserStats002.h" />
+    <ClInclude Include="SDK\ISteamUserStats003.h" />
+    <ClInclude Include="SDK\ISteamUserStats004.h" />
+    <ClInclude Include="SDK\ISteamUserStats005.h" />
+    <ClInclude Include="SDK\ISteamUserStats006.h" />
+    <ClInclude Include="SDK\ISteamUtils001.h" />
+    <ClInclude Include="SDK\ISteamUtils002.h" />
+    <ClInclude Include="SDK\ISteamUtils003.h" />
+    <ClInclude Include="SDK\ISteamUtils004.h" />
+    <ClInclude Include="SDK\LeaderboardEntry.h" />
+    <ClInclude Include="SDK\MasterServerUpdaterCommon.h" />
+    <ClInclude Include="SDK\MatchmakingCommon.h" />
+    <ClInclude Include="SDK\MatchMakingKeyValuePair.h" />
+    <ClInclude Include="SDK\MatchmakingServersCommon.h" />
+    <ClInclude Include="SDK\NetworkingCommon.h" />
+    <ClInclude Include="SDK\RemoteStorageCommon.h" />
+    <ClInclude Include="SDK\servernetadr.h" />
+    <ClInclude Include="SDK\Steam.h" />
+    <ClInclude Include="SDK\SteamAPI.h" />
+    <ClInclude Include="SDK\Steamclient.h" />
+    <ClInclude Include="SDK\SteamclientAPI.h" />
+    <ClInclude Include="SDK\SteamSalt.h" />
+    <ClInclude Include="SDK\SteamTypes.h" />
+    <ClInclude Include="SDK\Steamworks.h" />
+    <ClInclude Include="SDK\TSteamApp.h" />
+    <ClInclude Include="SDK\TSteamAppDependencyInfo.h" />
+    <ClInclude Include="SDK\TSteamAppLaunchOption.h" />
+    <ClInclude Include="SDK\TSteamAppStats.h" />
+    <ClInclude Include="SDK\TSteamAppVersion.h" />
+    <ClInclude Include="SDK\TSteamElemInfo.h" />
+    <ClInclude Include="SDK\TSteamError.h" />
+    <ClInclude Include="SDK\TSteamExternalBillingInfo.h" />
+    <ClInclude Include="SDK\TSteamGlobalUserID.h" />
+    <ClInclude Include="SDK\TSteamPaymentCardInfo.h" />
+    <ClInclude Include="SDK\TSteamPrepurchaseInfo.h" />
+    <ClInclude Include="SDK\TSteamProgress.h" />
+    <ClInclude Include="SDK\TSteamSplitLocalUserID.h" />
+    <ClInclude Include="SDK\TSteamSubscription.h" />
+    <ClInclude Include="SDK\TSteamSubscriptionBillingInfo.h" />
+    <ClInclude Include="SDK\TSteamSubscriptionStats.h" />
+    <ClInclude Include="SDK\TSteamUpdateStats.h" />
+    <ClInclude Include="SDK\UserCommon.h" />
+    <ClInclude Include="SDK\UserItemsCommon.h" />
+    <ClInclude Include="SDK\UserStatsCommon.h" />
+    <ClInclude Include="SDK\UtilsCommon.h" />
+    <ClInclude Include="steam_api_emu.h" />
+    <ClInclude Include="steam_api_emu_interfaces.h" />
+    <ClInclude Include="steam_api_emu_misc.h" />
+    <ClInclude Include="steam_api_emu_old_interfaces.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="util_codehook.h" />
+    <ClInclude Include="util_ini.h" />
+    <ClInclude Include="util_smbios2.h" />
+    <ClInclude Include="util_tests.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="VMProtectSDK.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NOTES.txt" />
+    <None Include="TODO.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

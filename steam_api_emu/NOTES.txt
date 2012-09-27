@@ -1,0 +1,120 @@
+004E0960   81EC 04080000    SUB ESP,804
+004E0966   E8 C598FEFF      CALL iw5sp_1_.004CA230
+004E096B   84C0             TEST AL,AL
+004E096D   75 09            JNZ SHORT iw5sp_1_.004E0978
+004E096F   B0 01            MOV AL,1
+004E0971   81C4 04080000    ADD ESP,804
+004E0977   C3               RETN
+004E0978   53               PUSH EBX
+004E0979   56               PUSH ESI
+004E097A   6A FF            PUSH -1
+004E097C   68 00000002      PUSH iw5sp_1_.02000000
+004E0981   6A 03            PUSH 3
+004E0983   6A 00            PUSH 0
+004E0985   6A 07            PUSH 7
+004E0987   68 00000080      PUSH 80000000
+004E098C   68 106B7A00      PUSH iw5sp_1_.007A6B10                   ; UNICODE "C:\"
+004E0991   32DB             XOR BL,BL
+
+81EC????0000E8????????84C07509B00181C4????0000C3
+
+
+
+
+00647616   56               PUSH ESI
+00647617   BA 6045E101      MOV EDX,iw5sp_1_.01E14560
+0064761C   E8 EFFBFFFF      CALL iw5sp_1_.00647210 -- decrypt
+00647621   57               PUSH EDI  --steam ID
+00647622   55               PUSH EBP  --steam ID
+00647623   E8 08FDFFFF      CALL iw5sp_1_.00647330  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+049DDE90
+
+5 = real player
++0x2c IP
++0x30 port
+049DDE90  05 00 00 00 01 00 00 00 EB 08 00 00 00 00 00 00  ......ë......
+049DDEA0  01 00 00 00 00 00 00 00 EC 08 00 00 04 00 00 00  .......ì.....
+049DDEB0  00 00 00 00 A3 18 00 00 04 00 00 00 C0 A8 0B 03  ....£.....À¨
+049DDEC0  02 0C 8E 75 E4 02 00 00 FF FF FF FF 00 00 00 00  .Žuä..ÿÿÿÿ....
+049DDED0  5A EF FF FF 00 00 00 00 00 00 00 00 20 F3 A1 04  Zïÿÿ........ ó¡
+
+
+
+mov     esi, offset dword_49FF304
+21474
+
+
+ping
+004E4B45   8B06             MOV EAX,DWORD PTR DS:[ESI]
+004E4B47   3D 0F270000      CMP EAX,270F
+004E4B4C   7C 05            JL SHORT iw5mp_se.004E4B53
+004E4B4E   B8 0F270000      MOV EAX,270F
+004E4B53   50               PUSH EAX
+004E4B54   68 68536F00      PUSH iw5mp_se.006F5368                   ; ASCII "%4i* "
+
+
+steam id str
+004E4B60   83C4 0C          ADD ESP,0C
+004E4B63   8D8E 1C080200    LEA ECX,DWORD PTR DS:[ESI+2081C]
+004E4B69   51               PUSH ECX
+004E4B6A   68 60536F00      PUSH iw5mp_se.006F5360                   ; ASCII "%32s "
+004E4B6F   6A 0F            PUSH 0F
+
+
+nickname:
+004E4B76   8D7E B4          LEA EDI,DWORD PTR DS:[ESI-4C]
+004E4B79   57               PUSH EDI
+004E4B7A   68 4C976E00      PUSH iw5mp_se.006E974C                   ; ASCII "%s^7"
+004E4B7F   6A 0F            PUSH 0F
+004E4B81   E8 0A6DFEFF      CALL iw5mp_se.004CB890
+
+
+score:
+004E4AFD   50               PUSH EAX   ---- user id
+004E4AFE   E8 1D47FAFF      CALL iw5mp_se.00489220
+
+
+
+04A56B88  00                                               .
+
+
+
+
+player info base
+.text:004E95EF 69 F6 88 86 07 00                             imul    esi, 78688h
+.text:004E95F5 68 00 04 00 00                                push    400h
+.text:004E95FA 8D 86 00 E5 9D 04                             lea     eax, unk_49DE500[esi]
+.text:004E9600 57                                            push    edi
+.text:004E9601 50                                            push    eax
+.text:004E9602 E8 29 7A 03 00                                call    sub_521030
+.text:004E9607 83 C4 0C                                      add     esp, 0Ch
+
+
+
+4A0CB08   49DE500
+
+
+.text:004E6550 56                                            push    esi
+.text:004E6551 57                                            push    edi
+.text:004E6552 33 FF                                         xor     edi, edi
+.text:004E6554 39 3D 8C DE 9D 04                             cmp     sv_maxclients_0, edi
+.text:004E655A BE 90 DE 9D 04                                mov     esi, offset clinets_block
+.text:004E655F 7E 29                                         jle     short loc_4E658A
+.text:004E6561
+.text:004E6561                               loc_4E6561:                             ; CODE XREF: sub_4E6550+38j
+.text:004E6561 83 3E 01                                      cmp     dword ptr [esi], 1
+.text:004E6564 7E 15                                         jle     short loc_4E657B

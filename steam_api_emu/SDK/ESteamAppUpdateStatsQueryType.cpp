@@ -1,0 +1,3 @@
+#include "ESteamAppUpdateStatsQueryType.h"
+
+};

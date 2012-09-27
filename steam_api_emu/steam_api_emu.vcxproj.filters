@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\steamworks">
+      <UniqueIdentifier>{931cd465-ea9d-43cf-ab49-bff5c117020b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Notes">
+      <UniqueIdentifier>{ef9321ff-fc67-488e-b11c-3e7041cb38f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="steam_api_emu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="steam_api_emu_misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_server_items.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util_adv_log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_hotkey_base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util_codehook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="steam_api_emu_exports.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_patch_base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="steam_api_emu_interfaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dw_stun_server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_dvar_base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dw_online_files.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util_ini.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_patch_base_coop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_admin_base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_patch_hookports.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util_smbios2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\AppsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\BillingCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\BridgeCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\CCallback.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\CGameID.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ClientCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ContentServerCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\CSteamID.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EAccountType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EAppUsageEvent.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EAuthSessionResponse.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EAvatarSize.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EBeginAuthSessionResult.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EChatEntryType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EChatRoomEnterResponse.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EDenyReason.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EDetailedPlatformErrorType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EFriendFlags.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EFriendMsgType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EFriendRelationship.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EItemCriteriaOperator.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EItemQuality.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EItemRequestResult.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ELeaderboardDataRequest.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ELeaderboardDisplayType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ELeaderboardSortMethod.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ELicenseFlags.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ELobbyComparison.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ELobbyType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ELogonState.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EMatchMakingServerResponse.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EMatchMakingType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ENewsUpdateType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ENotificationPosition.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EnumString.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EPaymentMethod.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EPersonaChange.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EPersonaState.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EPurchaseResultDetail.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ERegistrySubTree.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EResult.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EServerMode.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESNetSocketConnectionType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESNetSocketState.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamAPICallFailure.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamBufferMethod.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamError.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamFindFilter.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamNotificationCallbackEvent.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamPaymentCardType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamSeekMethod.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamSubscriptionBillingInfoType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamUserStatType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESystemIMType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EUniverse.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EVACBan.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EVoiceResult.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\FriendGameInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\FriendsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\GameCoordinatorCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\GameServerCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\gameserveritem.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\GameServerItemsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientAppManager.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientApps.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientContentServer.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientDepotBuilder.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientEngine.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientFriends.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientGameCoordinator.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientGameServer.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientMatchmaking.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientUser.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientUtils.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Interface.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IP2PController.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteam003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteam004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteam005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteam006.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteam2Bridge001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteam2Bridge002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamApps001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamApps002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamApps003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamBilling001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamBilling002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamClient006.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamClient007.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamClient008.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamContentServer001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamContentServer002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameCoordinator001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer006.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer007.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer008.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer009.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServerItems002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServerItems003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServerItems004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMasterServerUpdater001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking006.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking007.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmakingServers001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmakingServers002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamNetworking001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamNetworking002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamNetworking003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamRemoteStorage001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamRemoteStorage002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser006.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser007.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser008.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser009.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser010.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser011.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser012.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserItems001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserItems002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserItems003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats006.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUtils001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUtils002.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUtils003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUtils004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\LeaderboardEntry.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\MasterServerUpdaterCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\MatchmakingCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\MatchMakingKeyValuePair.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\MatchmakingServersCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\NetworkingCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\RemoteStorageCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\servernetadr.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Steam.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\SteamAPI.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Steamclient.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\SteamclientAPI.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\SteamSalt.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\SteamTypes.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Steamworks.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamApp.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamAppDependencyInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamAppLaunchOption.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamAppStats.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamAppVersion.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamElemInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamError.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamExternalBillingInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamGlobalUserID.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamPaymentCardInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamPrepurchaseInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamProgress.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamSplitLocalUserID.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamSubscription.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamSubscriptionBillingInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamSubscriptionStats.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamUpdateStats.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\UserCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\UserItemsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\UserStatsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\UtilsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\AppTicketCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\CSteamAPIContext.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EChatMemberStateChange.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EPersonalQuestion.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamAppUpdateStatsQueryType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamNotify.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamServerType.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ESteamSubscriptionStatus.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\GameServerStatsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\GameStatsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\HTTPCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientAudio.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientBilling.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientConfigStore.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientGameServerStats.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientGameStats.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientHTTP.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientMasterServerUpdater.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientMatchmakingServers.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientNetworking.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientRemoteStorage.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientScreenshots.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\IClientUserStats.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Interface_OSW.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamApps004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamAppTicket001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamClient009.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamClient010.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamClient011.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamClient012.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends006.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends007.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends008.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends009.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends010.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamFriends011.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer010.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServer011.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameServerStats001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamGameStats001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamHTTP001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking008.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamMatchmaking009.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamNetworking004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamNetworking005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamRemoteStorage003.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamRemoteStorage004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamRemoteStorage005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamScreenshots001.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser013.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser014.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser015.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUser016.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserItems004.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats007.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats008.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats009.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUserStats010.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ISteamUtils005.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\POSIXLibrary.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ScreenshotsCommon.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\string_t.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamDiscountQualifier.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamOfflineStatus.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamPaymentCardReceiptInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamPrepurchaseReceiptInfo.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamSubscriptionDiscount.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\TSteamSubscriptionReceipt.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Win32Library.h">
+      <Filter>Header Files\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="steam_api_emu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="steam_api_emu_misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util_tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_server_items.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="steam_api_emu_interfaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="steam_api_emu_old_interfaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util_adv_log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_hotkey_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util_codehook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_patch_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dw_stun_server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_dvar_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dw_online_files.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util_ini.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VMProtectSDK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_patch_base_coop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_admin_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_patch_hookports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util_smbios2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NOTES.txt">
+      <Filter>Header Files\Notes</Filter>
+    </None>
+    <None Include="TODO.txt">
+      <Filter>Header Files\Notes</Filter>
+    </None>
+  </ItemGroup>
+</Project>

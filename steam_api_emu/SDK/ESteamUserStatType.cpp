@@ -1,0 +1,3 @@
+#include "ESteamUserStatType.h"
+
+};

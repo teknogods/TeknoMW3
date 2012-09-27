@@ -1,0 +1,3 @@
+#include "ESteamSubscriptionStatus.h"
+
+};

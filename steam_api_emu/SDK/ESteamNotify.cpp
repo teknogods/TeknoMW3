@@ -1,0 +1,3 @@
+#include "ESteamNotify.h"
+
+};

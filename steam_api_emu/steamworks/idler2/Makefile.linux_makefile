@@ -1,0 +1,14 @@
+CC=gcc
+CFLAGS=-c -Wall -I"../Open Steamworks" -I"../boost_1_40_0" -Wfatal-errors
+LDFLAGS=-lstdc++ -Wl,-R./ -L./ steamclient_linux.so
+SOURCES=main.cpp util.cpp CItemDB.cpp CUser.cpp CClientContext.cpp CServerContext.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=idler2
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS) 
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@

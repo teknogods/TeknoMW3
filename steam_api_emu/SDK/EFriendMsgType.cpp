@@ -1,0 +1,3 @@
+#include "EFriendMsgType.h"
+
+};
